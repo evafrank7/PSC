@@ -1,0 +1,16 @@
+.impact-intro {
+  background-image: url("../images/background-img-intro.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.impact-intro h1,
+.impact-intro p {
+  color: white;
+  font-family: "Open Sans";
+}
+
+.impact-intro h1 {
+  font-weight: bold;
+}
