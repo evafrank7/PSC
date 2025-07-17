@@ -14,10 +14,34 @@
   font-family: "Open Sans";
 }
 
+.impact-intro p{
+    font-size: 20px;
+}
+
 .impact-intro h1 {
   font-weight: bold;
 }
 
 form{
     align-self: center;
+}
+
+.btn.btn-primary {
+    background-color: #00205B;
+    color: white;
+    border: none;
+}
+
+.btn.btn-primary:hover {
+    background-color: #0038a8;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+footer{
+    background-color: #00205B;
 }
