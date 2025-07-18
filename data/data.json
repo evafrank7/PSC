@@ -3,30 +3,35 @@
     "title": "AI for Early Disease Detection",
     "description": "A team from CMU uses PSC’s AI infrastructure to detect signs of Alzheimer’s years before symptoms show.",
     "researcher": "Dr. L. Chen, Carnegie Mellon University",
-    "tags": ["AI", "Healthcare"]
+    "tags": ["AI", "Healthcare"],
+    "image": "./images/ai.jpg"
   },
   {
     "title": "Predicting Extreme Weather",
     "description": "PSC-supported models help Penn State researchers forecast hurricanes with 20% greater accuracy.",
     "researcher": "Prof. R. Ahmed, Penn State",
-    "tags": ["Climate", "AI"]
+    "tags": ["Climate", "AI"],
+    "image": "./images/severe-weather.jpeg"
   },
   {
     "title": "Genomics at Scale",
     "description": "PSC enables Pitt’s medical center to analyze whole genome sequences for personalized cancer treatment.",
     "researcher": "Dr. J. Miller, UPMC",
-    "tags": ["Genomics", "Healthcare"]
+    "tags": ["Genomics", "Healthcare"],
+    "image": "./images/dna.png"
   },
   {
     "title": "Smart City Optimization",
     "description": "Urban planning researchers simulate traffic and energy use with PSC's high-performance tools.",
     "researcher": "CityLab, University of Pittsburgh",
-    "tags": ["AI", "Urban Planning"]
+    "tags": ["AI", "Urban Planning"],
+    "image": "./images/city.png"
   },
   {
     "title": "Understanding Protein Folding",
     "description": "Researchers use Anton at PSC to simulate protein folding for breakthrough treatments.",
     "researcher": "Dr. S. Gupta, Stanford University",
-    "tags": ["Genomics", "Biochemistry"]
+    "tags": ["Genomics", "Biochemistry"],
+    "image": "./images/protien-folding.jpeg"
   }
 ]
