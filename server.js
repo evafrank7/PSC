@@ -11,11 +11,14 @@ app.use(express.static('public'));
 app.post('/submit', (req, res) => {
   const data = req.body;
 
-  fs.appendFile('./data/submissions.json', JSON.stringify(data) + ',\n', (err) => {
+  const filePath = '/tmp/submissions.json';
+
+  fs.appendFile(filePath, JSON.stringify(data) + ',\n', (err) => {
     if (err) {
       console.error('Error saving submission:', err);
       res.status(500).send('Error saving submission');
     } else {
+      console.log('Submission saved:', data);
       res.status(200).send('Submission received');
     }
   });
