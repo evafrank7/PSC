@@ -366,14 +366,13 @@
             body: JSON.stringify(data),
           });
 
-          if (response.ok) {
-          alert('Submission successful!');
+         if (response.ok) {
           document.getElementById('actionForm').reset();
         } else {
           alert('Submission failed.');
         } 
         });
-        
+
     </script>
   </body>
 </html>
