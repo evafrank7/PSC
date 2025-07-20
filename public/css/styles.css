@@ -1,3 +1,6 @@
+body{
+  font-family: "Open Sans";
+}
 .impact-intro {
   background-image: url("../images/background-img-intro.jpg");
   background-size: cover;
@@ -20,6 +23,10 @@
 
 .impact-intro h1 {
   font-weight: bold;
+}
+
+.card-title{
+  font-family: "Source Serif 4", serif;
 }
 
 .card-img-top {
