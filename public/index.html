@@ -219,28 +219,54 @@
       </div>
     </section>
 
-    <script>
-      async function loadStories() {
-        const response = await fetch("./data/data.json");
-        const stories = await response.json();
-        const storyGrid = document.getElementById("storyGrid");
-        const tagFilter = document.getElementById("tagFilter");
+    <!-- Story Modal -->
+    <div
+      class="modal fade"
+      id="storyModal"
+      tabindex="-1"
+      aria-labelledby="storyModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="storyModalLabel"></h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="storyModalBody"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
 
-        function renderStories(filter = "All") {
-          storyGrid.innerHTML = "";
-          const filtered =
-            filter === "All"
-              ? stories
-              : stories.filter((s) => s.tags.includes(filter));
+<script>
+  async function loadStories() {
+    const response = await fetch("./data/data.json");
+    const stories = await response.json();
+    const storyGrid = document.getElementById("storyGrid");
+    const tagFilter = document.getElementById("tagFilter");
 
-          filtered.forEach((story) => {
-            const card = document.createElement("div");
-            card.className = "col";
-            card.innerHTML = `
-          <div class="card h-100 shadow-sm">
+    function renderStories(filter = "All") {
+      storyGrid.innerHTML = "";
+      const filtered =
+        filter === "All"
+          ? stories
+          : stories.filter((s) => s.tags.includes(filter));
+
+      filtered.forEach((story) => {
+        const card = document.createElement("div");
+        card.className = "col";
+        card.innerHTML = `
+          <div class="card h-100 shadow-sm" style="cursor: pointer;">
             <img src="${story.image}" class="card-img-top" alt="${
-              story.title
-            }" />
+          story.title
+        }" />
             <div class="card-body">
               <h5 class="card-title">${story.title}</h5>
               <p class="card-text">${story.description}</p>
@@ -256,129 +282,146 @@
             </div>
           </div>
         `;
-            storyGrid.appendChild(card);
-          });
-        }
+        card.querySelector(".card").addEventListener("click", () => {
+          const modalTitle = document.getElementById("storyModalLabel");
+          const modalBody = document.getElementById("storyModalBody");
 
-        tagFilter.addEventListener("change", () => {
-          renderStories(tagFilter.value);
+          modalTitle.textContent = story.title;
+          modalBody.innerHTML = `
+                <img src="${story.image}" alt="${
+            story.title
+          }" class="img-fluid mb-3" />
+                <p><strong>By:</strong> ${story.researcher}</p>
+                <p>${story.story || story.fullStory || story.description}</p>
+                <div class="mb-2">
+                  ${story.tags
+                    .map(
+                      (tag) =>
+                        `<span class="badge bg-secondary me-1">${tag}</span>`
+                    )
+                    .join("")}
+                </div>
+              `;
+
+          const storyModal = new bootstrap.Modal(
+            document.getElementById("storyModal")
+          );
+          storyModal.show();
         });
+        storyGrid.appendChild(card);
+      });
+    }
 
-        renderStories(); // initial load
-      }
+    tagFilter.addEventListener("change", () => {
+      renderStories(tagFilter.value);
+    });
 
-      loadStories();
-    </script>
+    renderStories(); // initial load
+  }
 
-    <!-- Call to Action -->
-    <section class="p-5">
-      <div class="container">
-        <h4>Share your story:</h4>
-        <div class="d-flex justify-content-center">
-          <form
-            id="actionForm"
-            style="max-width: 600px; width: 100%"
-            onsubmit="return false;"
-          >
-            <div class="mb-3">
-              <label for="nameInput" class="form-label">Name</label>
-              <input type="text" class="form-control" id="nameInput" required />
-            </div>
+  loadStories();
+</script>
 
-            <div class="mb-3">
-              <label for="emailInput" class="form-label">Email address</label>
-              <input
-                type="email"
-                class="form-control"
-                id="emailInput"
-                aria-describedby="emailHelp"
-                required
-              />
-              <div id="emailHelp" class="form-text">
-                We'll never share your email with anyone else.
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="titleInput" class="form-label">Story Title</label>
-              <input
-                type="text"
-                class="form-control"
-                id="titleInput"
-                required
-              />
-            </div>
-
-            <div class="mb-3">
-              <label for="descriptionInput" class="form-label"
-                >Short Description</label
-              >
-              <textarea
-                class="form-control"
-                id="descriptionInput"
-                rows="4"
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Submit Story</button>
-          </form>
+<!-- Call to Action -->
+<section class="p-5">
+  <div class="container">
+    <h4>Share your story:</h4>
+    <div class="d-flex justify-content-center">
+      <form
+        id="actionForm"
+        style="max-width: 600px; width: 100%"
+        onsubmit="return false;"
+      >
+        <div class="mb-3">
+          <label for="nameInput" class="form-label">Name</label>
+          <input type="text" class="form-control" id="nameInput" required />
         </div>
-      </div>
-    </section>
 
-    <footer class="text-white py-4 mt-5">
-      <div class="container text-center">
-        <p class="mb-1">
-          &copy; 2025 Pittsburgh Supercomputing Center. All rights reserved.
-        </p>
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <a class="text-white text-decoration-none" href="#"
-              >Privacy Policy</a
-            >
-          </li>
-          <li class="list-inline-item">
-            <a class="text-white text-decoration-none" href="#">Terms of Use</a>
-          </li>
-          <li class="list-inline-item">
-            <a class="text-white text-decoration-none" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="emailInput"
+            aria-describedby="emailHelp"
+            required
+          />
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
 
-    <!-- Bootstrap JS (with Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="mb-3">
+          <label for="titleInput" class="form-label">Story Title</label>
+          <input type="text" class="form-control" id="titleInput" required />
+        </div>
 
-    <!-- Call to action Script -->
-    <script>
-      document
-        .getElementById("actionForm")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
+        <div class="mb-3">
+          <label for="descriptionInput" class="form-label"
+            >Short Description</label
+          >
+          <textarea
+            class="form-control"
+            id="descriptionInput"
+            rows="4"
+            required
+          ></textarea>
+        </div>
 
-          const data = {
-            name: document.getElementById("nameInput").value,
-            email: document.getElementById("emailInput").value,
-            title: document.getElementById("titleInput").value,
-            description: document.getElementById("descriptionInput").value,
-          };
+        <button type="submit" class="btn btn-primary">Submit Story</button>
+      </form>
+    </div>
+  </div>
+</section>
 
-          const response = await fetch("https://psc-kbhx.onrender.com/submit", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          });
+<footer class="text-white py-4 mt-5">
+  <div class="container text-center">
+    <p class="mb-1">
+      &copy; 2025 Pittsburgh Supercomputing Center. All rights reserved.
+    </p>
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <a class="text-white text-decoration-none" href="#">Privacy Policy</a>
+      </li>
+      <li class="list-inline-item">
+        <a class="text-white text-decoration-none" href="#">Terms of Use</a>
+      </li>
+      <li class="list-inline-item">
+        <a class="text-white text-decoration-none" href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+</footer>
 
-          if (response.ok) {
-            document.getElementById("actionForm").reset();
-          } else {
-            alert("Submission failed.");
-          }
-        });
-    </script>
-  </body>
-</html>
+<!-- Bootstrap JS (with Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Call to action Script -->
+<script>
+  document
+    .getElementById("actionForm")
+    .addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const data = {
+        name: document.getElementById("nameInput").value,
+        email: document.getElementById("emailInput").value,
+        title: document.getElementById("titleInput").value,
+        description: document.getElementById("descriptionInput").value,
+      };
+
+      const response = await fetch("https://psc-kbhx.onrender.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        document.getElementById("actionForm").reset();
+      } else {
+        alert("Submission failed.");
+      }
+    });
+</script>
