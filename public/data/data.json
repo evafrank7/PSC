@@ -1,7 +1,7 @@
 [
   {
     "title": "AI for Early Disease Detection",
-    "description": "A team from CMU uses PSC’s AI infrastructure to detect signs of Alzheimer’s years before symptoms show.",
+    "description": "A team from CMU uses Pittsburgh Supercomputer Center's AI infrastructure to detect signs of Alzheimer’s years before symptoms show.",
     "researcher": "Dr. L. Chen, Carnegie Mellon University",
     "story": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nibh sed laoreet sagittis, elit velit tincidunt urna, ac dignissim metus erat ut odio. Integer suscipit, metus vel malesuada tincidunt, libero justo fermentum lorem, sed tincidunt velit dolor non sapien. Curabitur ac risus ac nisl tempus hendrerit. Morbi at purus eu ante vestibulum pulvinar in nec magna. Pellentesque in erat quis elit dignissim tincidunt. Donec lobortis dapibus magna non porttitor.",
     "tags": ["AI", "Healthcare"],
@@ -9,7 +9,7 @@
   },
   {
     "title": "Predicting Extreme Weather",
-    "description": "PSC-supported models help Penn State researchers forecast hurricanes with 20% greater accuracy.",
+    "description": "Pittsburgh Supercomputer Center-supported models help Penn State researchers forecast hurricanes with 20% greater accuracy.",
     "researcher": "Prof. R. Ahmed, Penn State",
     "story": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nibh sed laoreet sagittis, elit velit tincidunt urna, ac dignissim metus erat ut odio. Integer suscipit, metus vel malesuada tincidunt, libero justo fermentum lorem, sed tincidunt velit dolor non sapien. Curabitur ac risus ac nisl tempus hendrerit. Morbi at purus eu ante vestibulum pulvinar in nec magna. Pellentesque in erat quis elit dignissim tincidunt. Donec lobortis dapibus magna non porttitor.",
     "tags": ["Climate", "AI"],
@@ -17,7 +17,7 @@
   },
   {
     "title": "Genomics at Scale",
-    "description": "PSC enables Pitt’s medical center to analyze whole genome sequences for personalized cancer treatment.",
+    "description": "Pittsburgh Supercomputer Center enables Pitt’s medical center to analyze whole genome sequences for personalized cancer treatment.",
     "researcher": "Dr. J. Miller, UPMC",
     "story": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nibh sed laoreet sagittis, elit velit tincidunt urna, ac dignissim metus erat ut odio. Integer suscipit, metus vel malesuada tincidunt, libero justo fermentum lorem, sed tincidunt velit dolor non sapien. Curabitur ac risus ac nisl tempus hendrerit. Morbi at purus eu ante vestibulum pulvinar in nec magna. Pellentesque in erat quis elit dignissim tincidunt. Donec lobortis dapibus magna non porttitor.",
     "tags": ["Genomics", "Healthcare"],
@@ -25,7 +25,7 @@
   },
   {
     "title": "Smart City Optimization",
-    "description": "Urban planning researchers simulate traffic and energy use with PSC's high-performance tools.",
+    "description": "Urban planning researchers simulate traffic and energy use with Pittsburgh Supercomputer Center's high-performance tools.",
     "researcher": "CityLab, University of Pittsburgh",
     "story": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nibh sed laoreet sagittis, elit velit tincidunt urna, ac dignissim metus erat ut odio. Integer suscipit, metus vel malesuada tincidunt, libero justo fermentum lorem, sed tincidunt velit dolor non sapien. Curabitur ac risus ac nisl tempus hendrerit. Morbi at purus eu ante vestibulum pulvinar in nec magna. Pellentesque in erat quis elit dignissim tincidunt. Donec lobortis dapibus magna non porttitor.",
     "tags": ["AI", "Urban Planning"],
@@ -33,7 +33,7 @@
   },
   {
     "title": "Understanding Protein Folding",
-    "description": "Researchers use Anton at PSC to simulate protein folding for breakthrough treatments.",
+    "description": "Researchers use Anton at Pittsburgh Supercomputer Center to simulate protein folding for breakthrough treatments.",
     "researcher": "Dr. S. Gupta, Stanford University",
     "story": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nibh sed laoreet sagittis, elit velit tincidunt urna, ac dignissim metus erat ut odio. Integer suscipit, metus vel malesuada tincidunt, libero justo fermentum lorem, sed tincidunt velit dolor non sapien. Curabitur ac risus ac nisl tempus hendrerit. Morbi at purus eu ante vestibulum pulvinar in nec magna. Pellentesque in erat quis elit dignissim tincidunt. Donec lobortis dapibus magna non porttitor.",
     "tags": ["Genomics", "Biochemistry"],
